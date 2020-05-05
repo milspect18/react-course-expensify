@@ -1,0 +1,13 @@
+// Size scaling
+/* This should make 1rem === 10px (instead of 16 - since 16 * .625 = 10).  Thus 1.6rem === 16px
+ * This will be applied to the to the font-size in the html tag inside _base.scss */
+$global-size-scaler: 62.5%;
+
+// Colors
+
+// Spacing
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+$desktop-breakpoint: 28rem;

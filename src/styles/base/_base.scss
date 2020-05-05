@@ -1,0 +1,21 @@
+html {
+    /* This should make 1rem === 10px (instead of 16).  Thus 1.6rem === 16px */
+    font-size: $global-size-scaler;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+.is-active {
+    font-weight: bold;
+}
