@@ -2,14 +2,16 @@
 
 exports[`should render with multiple expenses (plural text) 1`] = `
 <div>
-  Viewing 3 expenses 
-  totalling $2,267.62
+  <h1>
+    Viewing 3 expenses totalling $2,267.62
+  </h1>
 </div>
 `;
 
 exports[`should render with single expense (singular text) 1`] = `
 <div>
-  Viewing 1 expense 
-  totalling $1.95
+  <h1>
+    Viewing 1 expense totalling $1.95
+  </h1>
 </div>
 `;

@@ -5,21 +5,21 @@ import selectExpenses from '../selectors/expenses';
 import selectExpensesTotal from '../selectors/expenses-total';
 
 
-export const ExpenseSummary = ({ expenses }) => {
-    const numExpenses = expenses.length;
-    const total = selectExpensesTotal(expenses);
+export const ExpenseSummary = ({ expensesCount, expensesTotal }) => {
+    const expenseWord = expensesCount === 1 ? 'expense' : 'expenses';
+    const totalString = numeral(expensesTotal / 100).format('$0,0.00');
 
     return (
         <div>
-            {`Viewing ${numExpenses} ${numExpenses === 1 ? 'expense' : 'expenses'} `}
-            {`totalling ${numeral(total / 100).format('$0,0.00')}`}
+            <h1>{`Viewing ${expensesCount} ${expenseWord} totalling ${totalString}`}</h1>
         </div>
     );
 };
 
 const mapStateToProps = (state) => {
     return {
-        expenses: selectExpenses(state.expenses, state.filters)
+        expensesCount: selectExpenses(state.expenses, state.filters).length,
+        expensesTotal: selectExpensesTotal(state.expenses)
     };
 }
 
