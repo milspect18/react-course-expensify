@@ -25,7 +25,7 @@ test('Should setup removeExpense action object', () => {
 });
 
 test('Should remove expense from database', (done) => {
-    const id = '1';
+    const id = expenses[1].id;
     const store = createMockStore({});
 
     database.ref(`expenses/${id}`).once('value').then((snapshot) => {
