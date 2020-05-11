@@ -18,7 +18,6 @@ export const editExpense = (id, updates) => ({
     updates
 });
 
-
 export const startAddExpense = (expenseData) => {
     return (dispatch) => {
         const { description = '', note = '', amount = 0, createdAt = 0 } = expenseData;
@@ -29,6 +28,26 @@ export const startAddExpense = (expenseData) => {
                 id: ref.key,
                 ...expense
             }))
+        });
+    };
+};
+
+export const setExpenses = (expenses) => ({
+    type: 'SET_EXPENSES',
+    expenses
+});
+
+export const startSetExpenses = () => {
+    return (dispatch) => {
+        const expenses = [];
+
+        return expensesRef.once('value').then((snapshot) => {
+            snapshot.forEach((item) => {
+                const expense = { id: item.key, ...item.val() };
+                expenses.push(expense);
+            });
+
+            dispatch(setExpenses(expenses));
         });
     };
 };

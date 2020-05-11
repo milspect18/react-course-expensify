@@ -14,7 +14,7 @@ exports[`Should render expense list with expenses fixture data 1`] = `
     amount={195}
     createdAt={100}
     description="Gum"
-    id={1}
+    id="1"
     key="1"
     note=""
   />
@@ -22,7 +22,7 @@ exports[`Should render expense list with expenses fixture data 1`] = `
     amount={202000}
     createdAt={-345600000}
     description="Rent"
-    id={2}
+    id="2"
     key="2"
     note=""
   />
@@ -30,7 +30,7 @@ exports[`Should render expense list with expenses fixture data 1`] = `
     amount={24567}
     createdAt={10364400000}
     description="Test"
-    id={3}
+    id="3"
     key="3"
     note=""
   />

@@ -12,7 +12,7 @@ test('Should add an expense to the test state', () => {
     const action = {
         type: 'ADD_EXPENSE',
         expense: {
-            id: 4,
+            id: '4',
             description: 'Boat',
             note: '',
             amount: 1000000,
@@ -56,7 +56,7 @@ test('Should modify an expense', () => {
     const result = expenseReducer(testState, action);
 
     expect(result).toEqual([
-        { id: 1, description: 'Updated', note: '', amount: 205, createdAt: 100 },
+        { id: '1', description: 'Updated', note: '', amount: 205, createdAt: 100 },
         testState[1],
         testState[2]
     ]);
@@ -65,13 +65,31 @@ test('Should modify an expense', () => {
 test('Should try to modify an expense with invalid id', () => {
     const action = {
         type: 'EDIT_EXPENSE',
-        id: 10,
+        id: '10',
         updates: {
             amount: 205,
             description: 'Updated'
         }
     };
     const result = expenseReducer(testState, action);
+
+    expect(result).toEqual(testState);
+});
+
+test('Should set expenses', () => {
+    let action = {
+        type: 'SET_EXPENSES',
+        expenses: [testState[0]]
+    }
+    let result = expenseReducer(testState, action);
+
+    expect(result).toEqual([testState[0]]);
+
+    action = {
+        type: 'SET_EXPENSES',
+        expenses: testState
+    }
+    result = expenseReducer(testState, action);
 
     expect(result).toEqual(testState);
 });
