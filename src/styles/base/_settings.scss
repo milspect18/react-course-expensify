@@ -4,10 +4,19 @@
 $global-size-scaler: 62.5%;
 
 // Colors
+$light-gray: #F7F7F7;
+$gray: #666666;
+$dark-gray: #333333;
+$blue: #1C88BF;
+$dark-blue: #364051;
+
+// Font sizes
+$font-sz-lg: 1.8rem;
+$font-sz-sm: 1.4rem;
 
 // Spacing
 $s-size: 1.2rem;
 $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
-$desktop-breakpoint: 28rem;
+$desktop-breakpoint: 40rem;
